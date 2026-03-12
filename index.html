@@ -1,13 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Sesión 2 - DOM y Eventos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.6;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .contenedor {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    .mensaje {
+      padding: 12px;
+      border-radius: 8px;
+      background: #eef2ff;
+      margin-bottom: 16px;
+    }
+
+    .resaltado {
+      background: #fde68a;
+      color: #92400e;
+      font-weight: bold;
+    }
+
+    .activo {
+      border: 2px solid #2563eb;
+    }
+
+    button {
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    input {
+      padding: 10px;
+      width: 100%;
+      max-width: 320px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .salida {
+      margin-top: 12px;
+      padding: 12px;
+      background: #ecfeff;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
-  <h1>mira el inspector en la seccion consola</h1>
-  <script src="script/practica.js">
-  </script>
+  <div class="contenedor">
+    <h1 id="titulo">Sesión 2: Manipulación del DOM y Eventos</h1>
+
+    <p class="mensaje" id="mensajePrincipal">
+      Este mensaje será modificado con JavaScript.
+    </p>
+
+    <section>
+      <h2>1. Botones de interacción</h2>
+      <button id="btnCambiarTexto">Cambiar texto</button>
+      <button id="btnCambiarClase">Alternar clase</button>
+      <button id="btnCrearElemento">Agregar tarea</button>
+      <button id="btnEliminarUltimo">Eliminar última tarea</button>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>2. Lista dinámica</h2>
+      <ul id="listaTareas">
+        <li>Estudiar selectores DOM</li>
+        <li>Practicar textContent</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>3. Formulario con submit</h2>
+      <form id="formularioRegistro">
+        <label for="nombre">Nombre del estudiante</label><br>
+        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre">
+        <br>
+        <button type="submit">Enviar formulario</button>
+      </form>
+
+      <div class="salida" id="salidaFormulario">
+        Aquí aparecerá el resultado del formulario.
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
